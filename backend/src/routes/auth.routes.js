@@ -14,5 +14,8 @@ router.put("/update-dp",protectedRoute,updatedfun)
 
 router.get("/check",protectedRoute,checkfun)
 
+
+
+
 export default router;
 

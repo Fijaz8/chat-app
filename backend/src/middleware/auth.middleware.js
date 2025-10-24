@@ -13,9 +13,9 @@ export const protectedRoute=async(req, res,next)=>{
     if (!iscorrect){
         return res.status(401).json({message:"Unauthorized - Invalid Token"})
     }
-    const user =await  User.findById(iscorrect.userId).select("-password");
+    const feuser =await  User.findById(iscorrect.userId).select("-password");
     
-    req.user = user;
+    req.user = feuser;
     next();
     }catch(error){
         console.log(error.message);

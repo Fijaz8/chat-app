@@ -108,6 +108,8 @@ export const updatedfun = async (req, res) => {
 
 export const checkfun = (req, res) => {
   try {
+   console.log("Cookies received:", req.cookies); // 👈 important
+    console.log("req.user:", req.user);
     const isAuthenticated = req.user;
     if (!isAuthenticated) {
       return res.status(401).json({ message: "Unauthorized access" });
